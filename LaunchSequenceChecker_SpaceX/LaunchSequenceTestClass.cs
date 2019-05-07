@@ -29,9 +29,19 @@ namespace LaunchSequenceChecker_SpaceX
             Assert.AreEqual(expected, output);
 
         }
+        [Test]
+        public void IfSystemNamesIsSizeTwoAndBothNamesAreSameWithIncreasingSize_ReturnTrue()
+        {
+            string[] systemNames = new string[2] { "stage_1", "stage_1" };
+            int[] stepNumbers = new int[2] { 2, 5 };
 
+            var output = _launchSequence.LaunchSequenceChecker(systemNames, stepNumbers);
+            var expected = true;
 
+            Assert.AreEqual(expected, output);
+        }
 
+        /*
         [Test]
         public void AllSystemSequencesAreInIncreasingOrder_ReturnTrue()
         {

@@ -34,7 +34,23 @@ namespace SmallestService
 
         public int FindClosestIntToZero(int[] numbers)
         {
-            throw new NotImplementedException();
+            if(numbers.Length == 0)
+                throw new ArgumentException();
+
+            int closestToZero = numbers[0];
+
+            if (numbers.Length > 1)
+            {
+                for (int index = 1; index < numbers.Length; index++)
+                {
+                    if (Math.Abs(closestToZero) > Math.Abs(numbers[index]))
+                        closestToZero = numbers[index];
+                    
+                    if (Math.Abs(closestToZero) == Math.Abs(numbers[index]))
+                        closestToZero = numbers[index];
+                }
+            }
+            return closestToZero;
         }
     }
 }

@@ -8,20 +8,25 @@ namespace HarryPotterBooks
 {
     public class BookStore : IBookStore
     {
-        public string[] bookTitles;
+        public string bookTitle;
 
-        public decimal CostOfBooksPurchase(int numOfBooks, string[] bookTitles)
+        public double CostOfBooksPurchase(int numOfBooks, string[] bookTitles)
         {
-            decimal totalBookCost = 8.00m;
+            double totalBookCost = 8;
+            float discount = 0;
+            float discountPrice = 0;
 
             if (numOfBooks == 1)
                 return totalBookCost;
 
             if (numOfBooks == 2)
             {
-                if (!string.Equals(bookTitles[0], bookTitles[1]))
-                    totalBookCost = (totalBookCost * 2) * (5 / 100);
-
+                if (!(bookTitles[0].Equals(bookTitles[1])))
+                {
+                    discount = 5;
+                    discountPrice = discount / 100;
+                    return Math.Floor((totalBookCost * 2) - (double)discountPrice);
+                }
                 else
                     return totalBookCost * 2;
             }

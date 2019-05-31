@@ -8,7 +8,7 @@ namespace HarryPotterBooks
 {
     public interface IBookStore
     {
-        decimal CostOfBooksPurchase(int quantity, string[] titles);
+        double CostOfBooksPurchase(int quantity, string[] titles);
         
     }
 }

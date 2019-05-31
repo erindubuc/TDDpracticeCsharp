@@ -48,15 +48,14 @@ namespace HarryPotterBookTests
     public class BookTests
     {
         
-        
         [Test]
         public void CostOfBuyingOneBook_ReturnsEightDollars()
         {
             BookStore _bookstore = new BookStore();
             int numOfBooks = 1;
             string[] bookTitles = new string[] { "Sorcerer's Stone" };
-            decimal expected = 8.00m;
-            decimal actual = _bookstore.CostOfBooksPurchase(numOfBooks, bookTitles);
+            double expected = 8;
+            double actual = _bookstore.CostOfBooksPurchase(numOfBooks, bookTitles);
 
             Assert.AreEqual(expected, actual);
         }
@@ -67,8 +66,8 @@ namespace HarryPotterBookTests
             BookStore _bookstore = new BookStore();
             string[] bookTitles = new string[] { "Sorcerer's Stone", "Cursed Child" };
             int numOfBooks = 2;
-            decimal expected = 15.20m;
-            decimal actual = _bookstore.CostOfBooksPurchase(numOfBooks, bookTitles);
+            double expected = 15;
+            double actual = _bookstore.CostOfBooksPurchase(numOfBooks, bookTitles);
 
             Assert.AreEqual(expected, actual);
         }

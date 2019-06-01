@@ -64,14 +64,82 @@ namespace HarryPotterBookTests
         public void BuyTwoDifferentTitles_ReturnCostWithFivePercentDiscount()
         {
             BookStore _bookstore = new BookStore();
-            string[] bookTitles = new string[] { "Sorcerer's Stone", "Cursed Child" };
+            string[] bookTitles = new string[2] { "Sorcerer's Stone", "Cursed Child" };
             int numOfBooks = 2;
             double expected = 15;
             double actual = _bookstore.CostOfBooksPurchase(numOfBooks, bookTitles);
 
             Assert.AreEqual(expected, actual);
         }
-            
+
+        [Test]
+        public void BuyThreeDifferentTitles_ReturnCostWithTenPercentDiscount()
+        {
+            BookStore _bookstore = new BookStore();
+            string[] bookTitles = new string[3] { "Sorcerer's Stone", "Cursed Child", "Half-Blood Prince" };
+            int numOfBooks = 3;
+            double expected = 23;
+            double actual = _bookstore.CostOfBooksPurchase(numOfBooks, bookTitles);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void BuyFourDifferentTitles_ReturnCostWithTwentyPercentDiscount()
+        {
+            BookStore _bookstore = new BookStore();
+            string[] bookTitles = new string[4] { "Sorcerer's Stone", "Cursed Child", "Half-Blood Prince", "Goblet of Fire" };
+            int numOfBooks = 4;
+            double expected = 31;
+            double actual = _bookstore.CostOfBooksPurchase(numOfBooks, bookTitles);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void BuyFiveDifferentTitles_ReturnCostWithTwentyFivePercentDiscount()
+        {
+            BookStore _bookstore = new BookStore();
+            string[] bookTitles = new string[5] { "Sorcerer's Stone", "Cursed Child", "Half-Blood Prince",
+                "Goblet of Fire", "Chamber of Secrets" };
+            int numOfBooks = 5;
+            double expected = 39;
+
+            Assert.AreEqual(expected, _bookstore.CostOfBooksPurchase(numOfBooks, bookTitles));
+        }
+
+        [Test]
+        public void BuyThreeBooks_TwoTitlesSameOneDifferent_ReturnFivePercentDiscountPlusEight()
+        {
+            BookStore _bookstore = new BookStore();
+            string[] bookTitles = new string[3] { "Sorcerer's Stone", "Cursed Child", "Cursed Child" };
+            int numOfBooks = 3;
+            double expected = 23;
+
+            Assert.AreEqual(expected, _bookstore.CostOfBooksPurchase(numOfBooks, bookTitles));
+        }
+
+        [Test]
+        public void BuyFourBooks_ThreeTitlesDifferent_ReturnTenPercentDiscountPlusEight()
+        {
+            BookStore _bookstore = new BookStore();
+            string[] bookTitles = new string[4] { "Sorcerer's Stone", "Goblet of Fire", "Cursed Child", "Cursed Child" };
+            int numOfBooks = 4;
+            double expected = 31;
+
+            Assert.AreEqual(expected, _bookstore.CostOfBooksPurchase(numOfBooks, bookTitles));
+        }
+
+        [Test]
+        public void BuyFiveBooks_FourTitlesDifferent_ReturnTenPercentDiscountPlusEight()
+        {
+            BookStore _bookstore = new BookStore();
+            string[] bookTitles = new string[5] { "Sorcerer's Stone", "Half-blood Prince", "Goblet of Fire", "Cursed Child", "Cursed Child" };
+            int numOfBooks = 5;
+            double expected = 39;
+
+            Assert.AreEqual(expected, _bookstore.CostOfBooksPurchase(numOfBooks, bookTitles));
+        }
     }
 
 }

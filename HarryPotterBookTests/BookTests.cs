@@ -140,9 +140,85 @@ namespace HarryPotterBookTests
 
             Assert.AreEqual(expected, _bookstore.CostOfBooksPurchase(numOfBooks, bookTitles));
         }
+
+        [Test]
+        public void UseDecimal_Returns8Dollars()
+        {
+            BookStore _bookstore = new BookStore();
+            string[] bookTitles = new string[1] { "Sorcerer's Stone"};
+            //int numOfBooks = 5;
+            decimal expected = 8.00m;
+
+            Assert.AreEqual(expected, _bookstore.GetTotalPriceToPayForHarryPotterBooks(bookTitles));
+        }
+
+        [Test]
+        public void UseDictionaryForTwoDifferentTitles_ReturnCostWithFivePercentDiscount()
+        {
+            BookStore _bookstore = new BookStore();
+            string[] bookTitles = new string[2] { "Sorcerer's Stone", "Half-Blood Prince" };
+            //int numOfBooks = 5;
+            decimal expected = 15.20m;
+
+            Assert.AreEqual(expected, _bookstore.GetTotalPriceToPayForHarryPotterBooks(bookTitles));
+        }
+
+        [Test]
+        public void DictionaryForThreeDifferentTitles_ReturnCostWithTenPercentDiscount()
+        {
+            BookStore _bookstore = new BookStore();
+            string[] bookTitles = new string[3] { "Sorcerer's Stone", "Half-Blood Prince", "Goblet of Fire" };
+            decimal expected = 21.60m;
+
+            Assert.AreEqual(expected, _bookstore.GetTotalPriceToPayForHarryPotterBooks(bookTitles));
+
+        }
+
+        [Test]
+        public void DictionaryForFourDifferentTitles_ReturnCostWithTwentyPercentDiscount()
+        {
+            BookStore _bookstore = new BookStore();
+            string[] bookTitles = new string[4] { "Sorcerer's Stone", "Half-Blood Prince", "Goblet of Fire", "Chamber of Secrets" };
+            decimal expected = 25.60m;
+
+            Assert.AreEqual(expected, _bookstore.GetTotalPriceToPayForHarryPotterBooks(bookTitles));
+
+        }
+
+        [Test]
+        public void DictionaryForFiveDifferentTitles_ReturnCostWithTwentyFivePercentDiscount()
+        {
+            BookStore _bookstore = new BookStore();
+            string[] bookTitles = new string[5] { "Sorcerer's Stone", "Half-Blood Prince", "Goblet of Fire", "Chamber of Secrets", "Prisoner of Azkaban" };
+            decimal expected = 30.00m;
+
+            Assert.AreEqual(expected, _bookstore.GetTotalPriceToPayForHarryPotterBooks(bookTitles));
+
+        }
+
+        [Test]
+        public void BuyTwoTitlesThatAreSame_ReturnCostWithTwentyFivePercentDiscount()
+        {
+            BookStore _bookstore = new BookStore();
+            string[] bookTitles = new string[2] { "Sorcerer's Stone", "Sorcerer's Stone" };
+            decimal expected = 16.00m;
+
+            Assert.AreEqual(expected, _bookstore.GetTotalPriceToPayForHarryPotterBooks(bookTitles));
+
+        }
+
+        [Test]
+        public void BuyThreeTitles_TwoThatAreSame_ReturnCostWithFivePercentDiscount()
+        {
+            BookStore _bookstore = new BookStore();
+            string[] bookTitles = new string[3] { "Sorcerer's Stone", "Sorcerer's Stone", "Chamber of Secrets" };
+            decimal expected = 23.20m;
+
+            Assert.AreEqual(expected, _bookstore.GetTotalPriceToPayForHarryPotterBooks(bookTitles));
+
+        }
     }
 
 }
-
 
 

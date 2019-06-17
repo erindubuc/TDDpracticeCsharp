@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28922.388
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreetingMaker", "GreetingMaker\GreetingMaker.csproj", "{1A63C4BF-724B-4DDD-86F7-6B07A77DF3EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreetingMakerTests", "GreetingMakerTests\GreetingMakerTests.csproj", "{A07D7EB4-867A-47EA-A105-404D7F0B06CF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A63C4BF-724B-4DDD-86F7-6B07A77DF3EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A63C4BF-724B-4DDD-86F7-6B07A77DF3EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A63C4BF-724B-4DDD-86F7-6B07A77DF3EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A63C4BF-724B-4DDD-86F7-6B07A77DF3EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A07D7EB4-867A-47EA-A105-404D7F0B06CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A07D7EB4-867A-47EA-A105-404D7F0B06CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A07D7EB4-867A-47EA-A105-404D7F0B06CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A07D7EB4-867A-47EA-A105-404D7F0B06CF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {023452FA-A5BF-4ACB-B011-D89D0CB0EDA2}
+	EndGlobalSection
+EndGlobal
